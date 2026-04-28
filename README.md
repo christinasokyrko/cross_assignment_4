@@ -1,19 +1,22 @@
 ## 📱 Screenshots
 
-### Bottom Navigation
-![BottomNavigation](assets/screenshots/BottomNavigation.png)
+### Home Screen
+![BottomNavigation](assets/screenshots/HomeScreeen.png)
 
-### Custom Button
-![CustomButton](assets/screenshots/CustomButton.png)
+### Explore Screen
+![Header](assets/screenshots/ExploreScreen.png)
 
-### Header
-![Header](assets/screenshots/Header.png)
+### Drawer
+![CustomButton](assets/screenshots/Drawer.png)
 
-### Product Card
+### Cart Screen
 ![ProductCard](assets/screenshots/ProductCard.png)
 
-### Section Header
-![SectionHeader](assets/screenshots/SectionHeader.png)
+### Checkout Screen
+![SectionHeader](assets/screenshots/CheckoutScreen.png)
+
+### Success Screen
+![SectionHeader](assets/screenshots/SuccessScreen.png)
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
