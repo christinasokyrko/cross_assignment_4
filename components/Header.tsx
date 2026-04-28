@@ -1,19 +1,27 @@
 import React from 'react';
-import {View, Text, StyleSheet, Platform} from 'react-native';
-import ProfileIcon from '../assets/icons/ei_user.svg';
+import {View, Text, StyleSheet, Platform, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
+import BurgerIcon from '../assets/icons/circum_menu-burger.svg';
 
 type Props = {
   title?: string;
 };
 
 const Header = ({title = 'StyleGO'}: Props) => {
+  const navigation = useNavigation<any>();
+
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>
         Style<Text style={styles.logoItalic}>GO</Text>
       </Text>
 
-      <ProfileIcon width={24} height={24} />
+      <TouchableOpacity
+        onPress={() => navigation.openDrawer()}
+        activeOpacity={0.7}>
+        <BurgerIcon width={24} height={24} />
+      </TouchableOpacity>
     </View>
   );
 };

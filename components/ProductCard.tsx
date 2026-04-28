@@ -15,16 +15,20 @@ type Props = {
   title: string;
   price: string;
   image: any;
+  onPress?: () => void;
 };
 
 const {width} = Dimensions.get('window');
 const cardWidth = width / 2 - 30;
 
-const ProductCard = ({title, price, image}: Props) => {
+const ProductCard = ({title, price, image, onPress}: Props) => {
   const [liked, setLiked] = useState(false);
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={onPress}
+      activeOpacity={0.85}>
       <View style={styles.imageWrapper}>
         <LinearGradient
           colors={['#E8EEEA', '#F7F4ED', '#DADADA']}
@@ -47,7 +51,7 @@ const ProductCard = ({title, price, image}: Props) => {
 
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.price}>{price}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -58,11 +62,9 @@ const styles = StyleSheet.create({
     width: cardWidth,
     margin: 10,
   },
-
   imageWrapper: {
     position: 'relative',
   },
-
   imageContainer: {
     width: '100%',
     height: 180,
@@ -70,26 +72,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   image: {
     width: '80%',
     height: '80%',
   },
-
   heartButton: {
     position: 'absolute',
     top: 12,
     right: 12,
     padding: 4,
   },
-
   title: {
     marginTop: 10,
     fontSize: 14,
     color: '#1C1C1C',
     fontFamily: 'PlusJakartaSans-SemiBold',
   },
-
   price: {
     marginTop: 4,
     fontSize: 14,

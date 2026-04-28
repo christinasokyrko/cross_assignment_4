@@ -1,114 +1,84 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import Header from './components/Header';
-import ProductCard from './components/ProductCard';
-import CustomButton from './components/CustomButton';
-import BottomNavigation from './components/BottomNavigation';
-import SectionHeader from './components/SectionHeader';
+import DrawerNavigator from './navigation/DrawerNavigator';
 
 function App() {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      {/* Header */}
-      <Header />
-
-      {/* Content */}
-      <ScrollView contentContainerStyle={styles.content}>
-        
-        {/* Recommended */}
-        <SectionHeader title="Recommended" />
-
-        <View style={styles.grid}>
-          <ProductCard
-            title="Layered Earth Tones"
-            price="$158.99"
-            image={require('./assets/images/explore/layered-earth-tones.png')}
-          />
-        </View>
-
-        {/* Trending */}
-        <SectionHeader title="Trending now" />
-
-        {/* Button */}
-        <CustomButton title="Continue shopping" />
-      </ScrollView>
-
-      {/* Bottom Navigation */}
-      <BottomNavigation activeTab="Home" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <DrawerNavigator />
+    </NavigationContainer>
   );
 }
 
 export default App;
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-
-  content: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-});
-
-
-
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-// import { NewAppScreen } from '@react-native/new-app-screen';
-// import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+// import React from 'react';
 // import {
-//   SafeAreaProvider,
-//   useSafeAreaInsets,
-// } from 'react-native-safe-area-context';
+//   SafeAreaView,
+//   ScrollView,
+//   StyleSheet,
+//   View,
+// } from 'react-native';
+
+// import Header from './components/Header';
+// import ProductCard from './components/ProductCard';
+// import CustomButton from './components/CustomButton';
+// import BottomNavigation from './components/BottomNavigation';
+// import SectionHeader from './components/SectionHeader';
 
 // function App() {
-//   const isDarkMode = useColorScheme() === 'dark';
-
 //   return (
-//     <SafeAreaProvider>
-//       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-//       <AppContent />
-//     </SafeAreaProvider>
+//     <SafeAreaView style={styles.safeArea}>
+//       {/* Header */}
+//       <Header />
+
+//       {/* Content */}
+//       <ScrollView contentContainerStyle={styles.content}>
+        
+//         {/* Recommended */}
+//         <SectionHeader title="Recommended" />
+
+//         <View style={styles.grid}>
+//           <ProductCard
+//             title="Layered Earth Tones"
+//             price="$158.99"
+//             image={require('./assets/images/explore/layered-earth-tones.png')}
+//           />
+//         </View>
+
+//         {/* Trending */}
+//         <SectionHeader title="Trending now" />
+
+//         {/* Button */}
+//         <CustomButton title="Continue shopping" />
+//       </ScrollView>
+
+//       {/* Bottom Navigation */}
+//       <BottomNavigation activeTab="Home" />
+//     </SafeAreaView>
 //   );
 // }
 
-// function AppContent() {
-//   const safeAreaInsets = useSafeAreaInsets();
-
-//   return (
-//     <View style={styles.container}>
-//       <NewAppScreen
-//         templateFileName="App.tsx"
-//         safeAreaInsets={safeAreaInsets}
-//       />
-//     </View>
-//   );
-// }
+// export default App;
 
 // const styles = StyleSheet.create({
-//   container: {
+//   safeArea: {
 //     flex: 1,
+//     backgroundColor: '#FFFFFF',
+//   },
+
+//   content: {
+//     paddingHorizontal: 20,
+//     paddingBottom: 20,
+//   },
+
+//   grid: {
+//     flexDirection: 'row',
+//     flexWrap: 'wrap',
+//     justifyContent: 'space-between',
 //   },
 // });
 
-// export default App;
+
+
